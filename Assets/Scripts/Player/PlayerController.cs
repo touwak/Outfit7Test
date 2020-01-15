@@ -75,11 +75,14 @@ namespace Outfit7.Player
 
         public void Fire(BulletController bullet)
         {
-            m_nextFire = Time.time + m_fireRate;
+            if (bullet != null)
+            {
+                m_nextFire = Time.time + m_fireRate;
 
-            bullet.transform.position = m_bulletsParent.position;
-            bullet.transform.rotation = m_bulletsParent.rotation;
-            bullet.Rigidbody.velocity = Vector3.up * bullet.Speed;
+                bullet.transform.position = m_bulletsParent.position;
+                bullet.transform.rotation = m_bulletsParent.rotation;
+                bullet.Rigidbody.velocity = Vector3.up * bullet.Speed;
+            }
         }
 
         private void OnTriggerEnter(Collider other)

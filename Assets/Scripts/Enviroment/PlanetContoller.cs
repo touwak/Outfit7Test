@@ -28,7 +28,7 @@ namespace Outfit7.Enviroment
             m_rotationDuration = Random.Range(2f, 10f);
             m_rotationTween = transform.DORotate(m_randomRotation * 180, m_rotationDuration).SetEase(Ease.Linear).SetLoops(-1, LoopType.Incremental);
 
-            m_movementVelocity = Random.Range(2f, 5f);
+            m_movementVelocity = Random.Range(0.1f, 2f);
             m_rigidbody.velocity = Vector3.down * m_movementVelocity;
         }
 
