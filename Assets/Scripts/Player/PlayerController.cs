@@ -3,6 +3,7 @@ using Outfit7.Interface;
 using Outfit7.Spaceship;
 using Outfit7.PowerUp;
 using UnityEngine;
+using DG.Tweening;
 
 namespace Outfit7.Player
 {
@@ -85,11 +86,18 @@ namespace Outfit7.Player
             transform.position = m_newPosition;
         }
 
-        private void OnTriggerEnter(Collider other)
+        private new void OnTriggerEnter(Collider other)
         {
-            base.OnTriggerEnter(other);
+            BulletController bulletController = other.GetComponent<BulletController>();
+            if (bulletController != null && !bulletController.CompareTag(this.tag))
+            {
+                m_mainCamera.DOShakePosition(0.5f, 1f, 10);
+                Damage(bulletController.Damage);
+                m_playerView.SetHealthSlider(m_health / m_spaceshipModel.Health);
+                other.gameObject.SetActive(false);
+            }
 
-            if(other.GetComponent<IPowerUp>() != null)
+            if (other.GetComponent<IPowerUp>() != null)
             {
                 switch (other.tag)
                 {

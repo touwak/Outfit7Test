@@ -10,7 +10,7 @@ namespace Outfit7.Spaceship
         [SerializeField]
         protected SpaceshipModel m_spaceshipModel;
 
-        protected int m_health;
+        protected float m_health;
         protected int m_lives;
         protected float m_fireRate;
 

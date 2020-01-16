@@ -12,6 +12,8 @@ namespace Outfit7.Player
         private GameObject m_shield;
         [SerializeField]
         private PUDamageController m_fireRateController;
+        [SerializeField]
+        private Slider m_HealthSlider;
 
         public void ActiveShield()
         {
@@ -21,6 +23,11 @@ namespace Outfit7.Player
         public void ActivePUMoreDamage()
         {
             m_fireRateController.ActivePowerUp();
-        }      
+        }
+        
+        public void SetHealthSlider(float value)
+        {
+            m_HealthSlider.value = value;
+        }
     }
 }
