@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Outfit7.PowerUp;
+using UnityEngine.UI;
 
 namespace Outfit7.Player
 {
@@ -20,10 +21,6 @@ namespace Outfit7.Player
         public void ActivePUMoreDamage()
         {
             m_fireRateController.ActivePowerUp();
-        }
-       
+        }      
     }
 }
-        
-
-//TODO shield, HUD, etc

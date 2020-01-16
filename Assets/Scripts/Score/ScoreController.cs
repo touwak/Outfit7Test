@@ -5,6 +5,8 @@ namespace Outfit7.UI.Score
 {
     public class ScoreController : MonoBehaviour
     {
+        public int Score => m_scoreModel.Score;
+
         [SerializeField]
         private ScoreView m_scoreView;
         [SerializeField]

@@ -57,6 +57,18 @@ namespace Outfit7.Player
             }
         }
 
+        public void Fire(BulletController bullet)
+        {
+            if (bullet != null)
+            {
+                m_nextFire = Time.time + m_fireRate;
+
+                bullet.transform.position = m_bulletsParent.position;
+                bullet.transform.rotation = m_bulletsParent.rotation;
+                bullet.Rigidbody.velocity = Vector3.up * bullet.Speed;
+            }
+        }
+
         private void PlayerMovement()
         {
             // TODO change to touch
@@ -71,18 +83,6 @@ namespace Outfit7.Player
             m_newPosition.x = Mathf.Clamp(m_mainCamera.ScreenToWorldPoint(m_touchPosition).x, m_screenBounds.x + m_shipWidth, m_screenBounds.x * -1 - m_shipWidth);
 
             transform.position = m_newPosition;
-        }
-
-        public void Fire(BulletController bullet)
-        {
-            if (bullet != null)
-            {
-                m_nextFire = Time.time + m_fireRate;
-
-                bullet.transform.position = m_bulletsParent.position;
-                bullet.transform.rotation = m_bulletsParent.rotation;
-                bullet.Rigidbody.velocity = Vector3.up * bullet.Speed;
-            }
         }
 
         private void OnTriggerEnter(Collider other)
@@ -106,6 +106,11 @@ namespace Outfit7.Player
 
                 other.gameObject.SetActive(false);
             }
+        }
+
+        private void OnDisable()
+        {
+            ReferenceVault.Instance.GameManager.ShowGameOverMenu(true);
         }
     }
 }

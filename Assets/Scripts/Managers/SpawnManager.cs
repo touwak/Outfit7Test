@@ -42,7 +42,10 @@ namespace Outfit7.Manager
 
         private void Update()
         {
-            CheckSpawn();
+            if (!ReferenceVault.Instance.GameManager.GamePaused)
+            {
+                CheckSpawn();
+            }
         }
 
         private void InitPools()

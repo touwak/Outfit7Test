@@ -1,7 +1,6 @@
 ﻿using Outfit7.Bullet;
 using Outfit7.Interface;
 using Outfit7.Spaceship;
-using Outfit7.Util.Singleton;
 using UnityEngine;
 
 namespace Outfit7.Obstacle

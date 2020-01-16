@@ -1,7 +1,6 @@
 ﻿using Outfit7.Interface;
 using UnityEngine;
 using Outfit7.Bullet;
-using Outfit7.Util.Singleton;
 
 namespace Outfit7.Spaceship
 {
