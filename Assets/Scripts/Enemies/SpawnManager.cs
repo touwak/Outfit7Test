@@ -12,8 +12,6 @@ namespace Outfit7.Manager
         [SerializeField]
         private Transform[] m_spawnPoints;
         [SerializeField]
-        private Transform[] m_bgSpawnPoints;
-        [SerializeField]
         private Transform[] m_parents;
 
         [Header("Spawned Items")]
@@ -23,20 +21,15 @@ namespace Outfit7.Manager
         private GameObject[] m_obstaclePrefabs;
         [SerializeField]
         private GameObject[] m_powerUpPrefabs;
-        [SerializeField]
-        private GameObject[] m_enviromentPrefabs;
 
         private List<PoolObjectController> m_enemyPool;
         private List<PoolObjectController> m_obstaclePool;
         private List<PoolObjectController> m_powerUpPool;
-        private List<PoolObjectController> m_enviromentPool;
         private float m_nextEnemy;
         private float m_nextObstacle;
-        private float m_nextEnviroment;
         private float m_enemySpawnRate = 3f;
         private float m_obstacleSpawnRate = 6f;
         private int m_powerUpRate = 20;
-        private float m_enviromentRate = 5f;
         private int m_spawnPointIndex = 0;
         private int m_objectTypeIndex = 0;
 
@@ -55,7 +48,6 @@ namespace Outfit7.Manager
             InitPool(ref m_enemyPool, m_enemyPrefabs, m_parents[0]);
             InitPool(ref m_obstaclePool, m_obstaclePrefabs, m_parents[1]);
             InitPool(ref m_powerUpPool, m_powerUpPrefabs, m_parents[2]);
-            InitPool(ref m_enviromentPool, m_enviromentPrefabs, m_parents[3]);
         }
 
         private void InitPool(ref List<PoolObjectController> pool, GameObject[] prefabs, Transform parent, uint size = 5, bool resizeable = false)
@@ -76,20 +68,17 @@ namespace Outfit7.Manager
                 SpawnEnemy();
 
             if (Time.time > m_nextObstacle)
-                SpawnObstacle();
-
-            if (Time.time > m_nextEnviroment)
-                SpawnEnviroment();
+                SpawnObstacle(); 
         }
 
-        private void SpawnObject(List<PoolObjectController> pool, bool useFrontSpawnPoints = true)
+        private void SpawnObject(List<PoolObjectController> pool)
         {
-            m_spawnPointIndex = useFrontSpawnPoints ? Random.Range(0, m_spawnPoints.Length) : Random.Range(0, m_bgSpawnPoints.Length);
+            m_spawnPointIndex = Random.Range(0, m_spawnPoints.Length);
             m_objectTypeIndex = Random.Range(0, pool.Count);
             GameObject toSpawn = pool[m_objectTypeIndex].GetObject();
             
             if (toSpawn)
-                toSpawn.transform.position = useFrontSpawnPoints ? m_spawnPoints[m_spawnPointIndex].position : m_bgSpawnPoints[m_spawnPointIndex].position;
+                toSpawn.transform.position = m_spawnPoints[m_spawnPointIndex].position;
         }
 
         private void SpawnEnemy()
@@ -109,12 +98,5 @@ namespace Outfit7.Manager
         {
             SpawnObject(m_powerUpPool);
         }
-
-        private void SpawnEnviroment()
-        {
-            m_nextEnviroment = Time.time + m_enviromentRate;
-            SpawnObject(m_enviromentPool, false);
-        }
-
     }
 }
