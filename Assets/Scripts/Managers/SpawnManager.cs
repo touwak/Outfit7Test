@@ -12,6 +12,8 @@ namespace Outfit7.Manager
         [SerializeField]
         private Transform[] m_spawnPoints;
         [SerializeField]
+        private Transform[] m_pathPoints;
+        [SerializeField]
         private Transform[] m_parents;
 
         [Header("Spawned Items")]
@@ -45,7 +47,7 @@ namespace Outfit7.Manager
 
         private void InitPools()
         {
-            InitPool(ref m_enemyPool, m_enemyPrefabs, m_parents[0]);
+            InitEnemyPool();
             InitPool(ref m_obstaclePool, m_obstaclePrefabs, m_parents[1]);
             InitPool(ref m_powerUpPool, m_powerUpPrefabs, m_parents[2]);
         }
@@ -79,6 +81,25 @@ namespace Outfit7.Manager
             
             if (toSpawn)
                 toSpawn.transform.position = m_spawnPoints[m_spawnPointIndex].position;
+        }
+
+        private void InitEnemyPool()
+        {
+            InitPool(ref m_enemyPool, m_enemyPrefabs, m_parents[0]);
+
+            // Set path enemies
+            foreach (PoolObjectController pool in m_enemyPool)
+            {
+                if (pool.Prefab.GetComponent<Enemy.EnemyPath>())
+                {
+                    foreach (GameObject enemy in pool.Pool)
+                    {
+                        enemy.GetComponent<Enemy.EnemyPath>().SetPositions(m_pathPoints);
+                    }
+
+                    return;
+                }
+            }
         }
 
         private void SpawnEnemy()

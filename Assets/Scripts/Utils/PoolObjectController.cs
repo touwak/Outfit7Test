@@ -6,6 +6,9 @@ namespace Outfit7.Util.PoolObject
 {
     public class PoolObjectController : MonoBehaviour
     {
+        public GameObject Prefab => m_poolObjectModel.Prefab;
+        public List<GameObject> Pool => m_poolObjectModel.Pool;
+
         private PoolObjectModel m_poolObjectModel;
 
         public PoolObjectController(GameObject prefab, Transform parent, uint initSize = 10, bool isResizeable = true)
