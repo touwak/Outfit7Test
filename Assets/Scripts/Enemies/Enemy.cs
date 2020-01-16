@@ -29,6 +29,11 @@ namespace Outfit7.Enemy
             }
         }
 
+        protected void OnEnable()
+        {
+            base.OnEnable();
+        }
+
         public void Fire(BulletController bullet)
         {
             m_nextFire = Time.time + m_spaceshipModel.FireRate;

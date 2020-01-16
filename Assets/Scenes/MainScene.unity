@@ -379,7 +379,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 580071880}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.03, y: -1.04, z: 0}
+  m_LocalPosition: {x: 1.87, y: -1.04, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1149327511}
@@ -489,7 +489,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 668477034}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.58, y: 1.9, z: 0}
+  m_LocalPosition: {x: -0.11, y: 1.9, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1149327511}
@@ -5408,8 +5408,9 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_text: 0
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 0bbe045f243e6aa4eb35288a426c87e7, type: 2}
+  m_sharedMaterial: {fileID: 9147431555299207334, guid: 0bbe045f243e6aa4eb35288a426c87e7,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -5572,6 +5573,7 @@ MonoBehaviour:
   - {fileID: 1041696383}
   m_enemyPrefabs:
   - {fileID: 2243655981381191816, guid: 628957b60ad30174fae1c204dc7140b2, type: 3}
+  - {fileID: 8487081068300399894, guid: 1a69ec876c6edb34b9a22dc9eb704f99, type: 3}
   m_obstaclePrefabs:
   - {fileID: 5501464820648282827, guid: 4e9cd6d2287a03342b4918e1a2d3bb6c, type: 3}
   m_powerUpPrefabs:
@@ -6505,7 +6507,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2105008971}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.87, y: 4.82, z: 0}
+  m_LocalPosition: {x: 1.7099999, y: 4.82, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1149327511}

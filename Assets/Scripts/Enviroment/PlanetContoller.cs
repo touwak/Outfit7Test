@@ -13,13 +13,13 @@ namespace Outfit7.Enviroment
         Tween m_rotationTween;
         private float m_movementVelocity;
 
-        private void OnEnable()
+        private void Start()
         {
             m_randomRotation = new Vector3
             {
-                x = Random.Range(0f, 256f),
-                y = Random.Range(0f, 256f),
-                z = Random.Range(0f, 256f)
+                x = Random.Range(0f, 360f),
+                y = Random.Range(0f, 360f),
+                z = Random.Range(0f, 360f)
             };
             m_rotationDuration = Random.Range(2f, 10f);
             m_rotationTween = transform.DORotate(m_randomRotation * 180, m_rotationDuration).SetEase(Ease.Linear).SetLoops(-1, LoopType.Incremental);
