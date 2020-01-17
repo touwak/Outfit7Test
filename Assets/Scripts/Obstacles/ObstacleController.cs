@@ -1,6 +1,6 @@
 ﻿using Outfit7.Bullet;
 using Outfit7.Interface;
-using Outfit7.Spaceship;
+using Outfit7.Player;
 using UnityEngine;
 
 namespace Outfit7.Obstacle
@@ -55,7 +55,7 @@ namespace Outfit7.Obstacle
             }
             else if (other.CompareTag("Player"))
             {
-                other.GetComponent<SpaceshipController>().Damage(m_obstacleModel.Damage);
+                other.GetComponent<PlayerController>().Damage(m_obstacleModel.Damage);
                 Kill();
             }
         }
