@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using Outfit7.PowerUp;
 using UnityEngine.UI;
+using Outfit7.Spaceship;
 
 namespace Outfit7.Player
 {
-    public class PlayerView : MonoBehaviour
+    public class PlayerView : SpaceshipView
     {
         [SerializeField]
         private GameObject m_shield;

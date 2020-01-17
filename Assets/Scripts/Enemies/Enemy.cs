@@ -36,6 +36,7 @@ namespace Outfit7.Enemy
 
         public void Fire(BulletController bullet)
         {
+            m_spaceshipView.PlayShootSound();
             m_nextFire = Time.time + m_spaceshipModel.FireRate;
 
             bullet.transform.position = m_bulletsParent.position;

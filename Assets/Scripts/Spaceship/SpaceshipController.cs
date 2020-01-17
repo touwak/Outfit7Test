@@ -8,6 +8,8 @@ namespace Outfit7.Spaceship
     public class SpaceshipController : MonoBehaviour, IDamageable<int>, IKillable
     {
         [SerializeField]
+        protected SpaceshipView m_spaceshipView;
+        [SerializeField]
         protected SpaceshipModel m_spaceshipModel;
 
         protected float m_health;
@@ -41,6 +43,7 @@ namespace Outfit7.Spaceship
 
         public void Kill()
         {
+            m_spaceshipView.PlayExplosionSound();
             ReferenceVault.Instance.ScoreController.SetScore(m_spaceshipModel.Score);
             gameObject.SetActive(false);
         }

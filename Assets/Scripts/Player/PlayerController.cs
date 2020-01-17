@@ -1,9 +1,8 @@
-﻿using Outfit7.Bullet;
+﻿using DG.Tweening;
+using Outfit7.Bullet;
 using Outfit7.Interface;
 using Outfit7.Spaceship;
-using Outfit7.PowerUp;
 using UnityEngine;
-using DG.Tweening;
 
 namespace Outfit7.Player
 {
@@ -22,7 +21,7 @@ namespace Outfit7.Player
         private float m_nextFire = 0f;
         private BulletPool m_bulletPool;
         private Vector3 m_screenBounds;
-        private float m_shipWidth; 
+        private float m_shipWidth;
 
         private void Awake()
         {
@@ -67,13 +66,15 @@ namespace Outfit7.Player
                 bullet.transform.position = m_bulletsParent.position;
                 bullet.transform.rotation = m_bulletsParent.rotation;
                 bullet.Rigidbody.velocity = Vector3.up * bullet.Speed;
+
+                m_playerView.PlayShootSound();
             }
         }
 
         private void PlayerMovement()
         {
             // TODO change to touch
-                
+
             //m_touch = Input.GetTouch(0);
             //m_touchPosition = m_touch.position;
 

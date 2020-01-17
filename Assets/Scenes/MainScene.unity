@@ -7702,6 +7702,21 @@ PrefabInstance:
       propertyPath: m_HealthSlider
       value: 
       objectReference: {fileID: 610293070}
+    - target: {fileID: 6163393324851378683, guid: 088e0177a8280d7449bf649cdd6cea55,
+        type: 3}
+      propertyPath: m_audioSource
+      value: 
+      objectReference: {fileID: 4901500805169102861}
+    - target: {fileID: 6163393324851378683, guid: 088e0177a8280d7449bf649cdd6cea55,
+        type: 3}
+      propertyPath: m_explosionSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 7c33b4cc8a907d140a932cc75b9e64a5, type: 3}
+    - target: {fileID: 6163393324851378683, guid: 088e0177a8280d7449bf649cdd6cea55,
+        type: 3}
+      propertyPath: m_shootSound
+      value: 
+      objectReference: {fileID: 8300000, guid: d2d9aa502e3a33f4387d9ea313183594, type: 3}
     - target: {fileID: 6867169968824573603, guid: 088e0177a8280d7449bf649cdd6cea55,
         type: 3}
       propertyPath: m_bulletController
@@ -7716,3 +7731,9 @@ PrefabInstance:
         type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 088e0177a8280d7449bf649cdd6cea55, type: 3}
+--- !u!82 &4901500805169102861 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 4138125557551802129, guid: 088e0177a8280d7449bf649cdd6cea55,
+    type: 3}
+  m_PrefabInstance: {fileID: 4901500805169102860}
+  m_PrefabAsset: {fileID: 0}

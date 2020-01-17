@@ -9,6 +9,8 @@ namespace Outfit7.Obstacle
     public class ObstacleController : MonoBehaviour, IDamageable<int>, IKillable
     {
         [SerializeField]
+        protected ObstacleView m_obstacleView;
+        [SerializeField]
         protected ObstacleModel m_obstacleModel;
 
         protected Rigidbody m_rigidbody;
@@ -38,6 +40,7 @@ namespace Outfit7.Obstacle
 
         public void Kill()
         {
+            m_obstacleView.PlayExplosionSound();
             ReferenceVault.Instance.ScoreController.SetScore(m_obstacleModel.Score);
             gameObject.SetActive(false);
         }
