@@ -34,19 +34,7 @@ namespace Outfit7.Player
 
         private void Update()
         {
-            // TODO change to touch
-
-            //if (Input.touchCount > 0)
-            //{
-            //    PlayerMovement();
-
-            //    if (Time.time > m_nextFire)
-            //    {
-            //        Fire(m_bulletPool.GetPlayerBullet());
-            //    }
-            //}
-
-            if (Input.GetMouseButton(0))
+            if (Input.touchCount > 0)
             {
                 PlayerMovement();
 
@@ -73,13 +61,8 @@ namespace Outfit7.Player
 
         private void PlayerMovement()
         {
-            // TODO change to touch
-
-            //m_touch = Input.GetTouch(0);
-            //m_touchPosition = m_touch.position;
-
-            m_touchPosition = Input.mousePosition;
-
+            m_touch = Input.GetTouch(0);
+            m_touchPosition = m_touch.position;
 
             m_touchPosition.z = transform.position.z - m_mainCamera.transform.position.z;
             m_newPosition.x = Mathf.Clamp(m_mainCamera.ScreenToWorldPoint(m_touchPosition).x, m_screenBounds.x + m_shipWidth, m_screenBounds.x * -1 - m_shipWidth);
