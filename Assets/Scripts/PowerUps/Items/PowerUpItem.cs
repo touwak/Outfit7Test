@@ -1,7 +1,5 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using Outfit7.Interface;
 using UnityEngine;
-using Outfit7.Interface;
 
 namespace Outfit7.PowerUp
 {
@@ -15,7 +13,7 @@ namespace Outfit7.PowerUp
 
         private void Start()
         {
-            m_rigidbody.velocity = Vector3.down* m_speed;
+            m_rigidbody.velocity = Vector3.down * m_speed;
         }
     }
 }

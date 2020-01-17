@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace Outfit7.PowerUp
 {
@@ -17,7 +15,7 @@ namespace Outfit7.PowerUp
         protected void OnEnable()
         {
             ResetTimer();
-        } 
+        }
 
         protected void ResetTimer()
         {

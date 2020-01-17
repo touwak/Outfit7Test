@@ -1,7 +1,6 @@
-﻿using System.Collections;
+﻿using Outfit7.Util.PoolObject;
 using System.Collections.Generic;
 using UnityEngine;
-using Outfit7.Util.PoolObject;
 
 namespace Outfit7.Manager
 {
@@ -73,7 +72,7 @@ namespace Outfit7.Manager
                 SpawnEnemy();
 
             if (Time.time > m_nextObstacle)
-                SpawnObstacle(); 
+                SpawnObstacle();
         }
 
         private void SpawnObject(List<PoolObjectController> pool)
@@ -81,7 +80,7 @@ namespace Outfit7.Manager
             m_spawnPointIndex = Random.Range(0, m_spawnPoints.Length);
             m_objectTypeIndex = Random.Range(0, pool.Count);
             GameObject toSpawn = pool[m_objectTypeIndex].GetObject();
-            
+
             if (toSpawn)
                 toSpawn.transform.position = m_spawnPoints[m_spawnPointIndex].position;
         }

@@ -1,7 +1,6 @@
-﻿using Outfit7.UI.Score;
-using System;
+﻿using Outfit7.Manager.GameManager;
+using Outfit7.UI.Score;
 using UnityEngine;
-using Outfit7.Manager.GameManager;
 
 public class ReferenceVault : MonoBehaviour
 {

@@ -1,9 +1,7 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using Outfit7.PowerUp;
-using UnityEngine.UI;
+﻿using Outfit7.PowerUp;
 using Outfit7.Spaceship;
+using UnityEngine;
+using UnityEngine.UI;
 
 namespace Outfit7.Player
 {
@@ -25,7 +23,7 @@ namespace Outfit7.Player
         {
             m_fireRateController.ActivePowerUp();
         }
-        
+
         public void SetHealthSlider(float value)
         {
             m_HealthSlider.value = value;
